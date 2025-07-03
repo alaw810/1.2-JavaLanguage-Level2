@@ -10,7 +10,7 @@ public class Input {
                 System.out.print(message + " ");
                 return sc.nextByte();
             } catch (InputMismatchException e) {
-                System.out.println("Format error.");
+                System.out.println("Format error. Please enter a valid byte number.");
                 sc.nextLine();
             }
         }
@@ -23,7 +23,7 @@ public class Input {
                 System.out.print(message + " ");
                 return sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Format error.");
+                System.out.println("Format error. Please enter a valid integer.");
                 sc.nextLine();
             }
         }
@@ -35,7 +35,7 @@ public class Input {
                 System.out.print(message + " ");
                 return sc.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("Format error.");
+                System.out.println("Format error. Please enter a valid double.");
                 sc.nextLine();
             }
         }
@@ -47,10 +47,60 @@ public class Input {
                 System.out.print(message + " ");
                 return sc.nextFloat();
             } catch (InputMismatchException e) {
-                System.out.println("Format error.");
+                System.out.println("Format error. Please enter a valid float.");
                 sc.nextLine();
             }
         }
+    }
+
+    public static char readChar(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine();
+            try {
+                if (input.length() != 1) {
+                    throw new InvalidInputException("You must enter exactly one character.");
+                }
+                return input.charAt(0);
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+
+        }
+    }
+
+    public static String readString(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine();
+            try {
+                if (input.isEmpty()) {
+                    throw new InvalidInputException("Input cannot be empty.");
+                }
+                return input;
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+        }
+    }
+
+    public static boolean readYesNo(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine();
+            try {
+                if (input.equals("y")) {
+                    return true;
+                } else if (input.equals("n")) {
+                    return false;
+                } else {
+                    throw new InvalidInputException("Please enter 'y' for yes or 'n' for no.");
+                }
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+        }
+
     }
 
 }
