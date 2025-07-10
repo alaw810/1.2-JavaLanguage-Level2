@@ -8,5 +8,15 @@ public class Main {
         String s = Input.readString("Where do you live?");
         boolean yesNo = Input.readYesNo("Do you like pizza? (y/n)");
 
+        // Summary
+        System.out.println("\n--- Summary of your input ---");
+        System.out.println("Age: " + b);
+        System.out.println("Year of birth: " + i);
+        System.out.println("Weight: " + d + " kg");
+        System.out.println("Height: " + f + " m");
+        System.out.println("First letter of your name: " + c);
+        System.out.println("City: " + s);
+        System.out.println("Likes pizza: " + (yesNo ? "Yes" : "No"));
+
     }
 }
