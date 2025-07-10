@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static byte readByte(String message) {
         while (true) {
@@ -55,5 +55,38 @@ public class Input {
             }
         }
     }
+
+
+    public static char readChar(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine().trim();
+            try {
+                if (input.length() != 1) {
+                    throw new InvalidInputException("You must enter exactly one character.");
+                }
+                return input.charAt(0);
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+
+        }
+    }
+
+    public static String readString(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine().trim();
+            try {
+                if (input.isEmpty()) {
+                    throw new InvalidInputException("Input cannot be empty.");
+                }
+                return input;
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+        }
+    }
+
 
 }
