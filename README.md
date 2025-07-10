@@ -50,7 +50,7 @@ The method `readYesNo()` returns:
 
 ## 💻 Technologies Used
 
-- Java 24
+- Java 21
 - IntelliJ IDEA (or any other Java IDE)
 - Git & GitHub (optional, for version control)
 
@@ -58,7 +58,7 @@ The method `readYesNo()` returns:
 
 ## 📋 Requirements
 
-- Java SDK 24 or higher
+- Java SDK 21 or higher
 - An IDE like IntelliJ IDEA or Eclipse
 - Git installed (optional)
 
@@ -77,7 +77,7 @@ The method `readYesNo()` returns:
 
 3. Set the correct Java SDK:
 
-    File → Project Structure → SDKs → Java 24+
+    File → Project Structure → SDKs → Java 21+
 
 ---
 
