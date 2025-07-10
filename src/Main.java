@@ -6,6 +6,7 @@ public class Main {
         float f = Input.readFloat("How tall are you in meters?");
         char c = Input.readChar("What's the first letter of your name?");
         String s = Input.readString("Where do you live?");
+        boolean yesNo = Input.readYesNo("Do you like pizza? (y/n)");
 
     }
 }

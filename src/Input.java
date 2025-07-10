@@ -88,5 +88,23 @@ public class Input {
         }
     }
 
+    public static boolean readYesNo(String message) {
+        while (true) {
+            System.out.print(message + " ");
+            String input = sc.nextLine().trim().toLowerCase();
+            try {
+                if (input.equals("y")) {
+                    return true;
+                } else if (input.equals("n")) {
+                    return false;
+                } else {
+                    throw new InvalidInputException("Please enter 'y' for yes or 'n' for no.");
+                }
+            } catch (InvalidInputException e) {
+                System.out.println("Invalid input: " + e.getMessage());
+            }
+        }
+
+    }
 
 }
